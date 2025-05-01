@@ -381,7 +381,12 @@
                     "200": {
                         "description": "JSON map of all translations"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
             }
         }
     },

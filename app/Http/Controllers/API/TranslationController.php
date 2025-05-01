@@ -69,8 +69,8 @@ class TranslationController extends Controller
 
         if ($request->filled('content')) {
             $query->where('translations->en', 'like', "%{$request->content}%")
-                  ->orWhere('translations->fr', 'like', "%{$request->content}%")
-                  ->orWhere('translations->es', 'like', "%{$request->content}%");
+                ->orWhere('translations->fr', 'like', "%{$request->content}%")
+                ->orWhere('translations->es', 'like', "%{$request->content}%");
         }
 
         return response()->json($query->get());
@@ -226,6 +226,7 @@ class TranslationController extends Controller
      *     path="/api/translations/export",
      *     summary="Export translations for frontend",
      *     tags={"Translations"},
+     *     security={{"sanctum":{}}},
      *     @OA\Parameter(
      *         name="Accept",
      *         in="header",

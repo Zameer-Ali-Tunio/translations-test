@@ -18,7 +18,7 @@ use App\Http\Controllers\API\TranslationController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login'])->name('login');
-Route::get('/export-translations', [TranslationController::class, 'export']);
+
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -26,5 +26,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('translations', TranslationController::class);
+    Route::get('/export-translations', [TranslationController::class, 'export']);
 });
-
