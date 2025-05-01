@@ -59,24 +59,3 @@ http://localhost:8000/api/documentation
 ```
 
 ---
-
-## 📄 Notes
-
-- Make sure the `.env` file has the correct DB and app settings.
-- If needed, run `docker-compose exec app php artisan config:clear` after updating `.env`.
-
----
-
-## 🛠 Additional Commands (Optional)
-
-```bash
-# Run Laravel tests
-docker-compose exec app php artisan test
-
-# Clear cache (optional)
-docker-compose exec app php artisan optimize:clear
-```
-
----
-
-Happy Coding! 🎉
